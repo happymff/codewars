@@ -78,12 +78,7 @@
                 <artifactId>gson</artifactId>
                 <version>2.2.4</version>
             </dependency>
-            <dependency>
-                <groupId>appium</groupId>
-                <artifactId>appium</artifactId>
-                <version>1.0-SNAPSHOT</version>
-                <scope>test</scope>
-            </dependency>
+
         </dependencies>
 
         <build>
