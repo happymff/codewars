@@ -4,7 +4,7 @@
 public class Line {
     public static String Tickets(int[] peopleInLine) {
         //Your code is here...
-        int sum=0, count25=1,count50=0,count100=0;
+        int sum=0, count25=1,count50=0;
         if(peopleInLine.length<=0||peopleInLine[0]!=25){
             return "NO";
         }else if(peopleInLine.length>1&&peopleInLine[0]==25) {
@@ -19,7 +19,7 @@ public class Line {
                         return "NO";
                     }
                 }else if(peopleInLine[i]==100){
-                    count100++;
+
                     if(count50>0) {
                         sum = sum + peopleInLine[i] - 25 - count25 * 25 - count50 * 50;
                         count50--;
