@@ -65,11 +65,13 @@ public class RainfallTest {
         System.out.println("Fixed Tests: mean data");
         assertFuzzyEquals(Rainfall.mean("London", RainfallTest.data), 51.199999999999996);
         assertFuzzyEquals(Rainfall.mean("Beijing", RainfallTest.data), 52.416666666666664);
+        assertFuzzyEquals(Rainfall.mean("Montevideo", RainfallTest.data), -1);
     }
     @Test
     public void test2() {
         System.out.println("Fixed Tests: variance data");
         assertFuzzyEquals(Rainfall.variance("London", RainfallTest.data), 57.42833333333374);
         assertFuzzyEquals(Rainfall.variance("Beijing", RainfallTest.data), 4808.37138888889);
+        assertFuzzyEquals(Rainfall.mean("Madrid", RainfallTest.data), -1);
     }
 }
