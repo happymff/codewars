@@ -4,27 +4,29 @@
 public class DirReduction {
     public static String[] dirReduc(String[] arr) {
         // Your code here.
-        String[] s1;
-            StringBuffer stringBuffer;
-            stringBuffer=getDir(arr);
-            while (true) {
-                System.out.println(stringBuffer);
-                String s = String.valueOf(stringBuffer);
-                if ((s.contains("NORTH") && s.contains("SOUTH"))||(s.contains("WEST") && s.contains("EAST"))) {
-                    s1 = s.split(",");
-                    StringBuffer stringBuffer1 = getDir(s1);
-                    stringBuffer.delete(0, stringBuffer.length());
-                    stringBuffer.append(stringBuffer1);
-                } else {
-                    s1 = s.split(",");
+        String[] s1, s2;
+        StringBuffer stringBuffer;
+        stringBuffer = getDir(arr);
+        while (true) {
+            //System.out.println(stringBuffer);
+            String s = String.valueOf(stringBuffer);
+            if ((s.contains("NORTH") && s.contains("SOUTH")) || (s.contains("WEST") && s.contains("EAST"))) {
+                s1 = s.split(",");
+                StringBuffer stringBuffer1 = getDir(s1);
+                stringBuffer.delete(0, stringBuffer.length());
+                stringBuffer.append(stringBuffer1);
+                String s3 = String.valueOf(stringBuffer1);
+                s2=s3.split(",");
+                if(s2.length==s1.length){
                     break;
                 }
-                if(s.length()==21&&(s.contains("NORTH")&&s.contains("SOUTH")&&s.contains("WEST") && s.contains("EAST"))){
-                    //System.out.println("四个");
-                    s1 = s.split(",");
-                    break;
-                }
+            } else {
+                s1 = s.split(",");
+                break;
             }
+
+
+        }
         return s1;
     }
 

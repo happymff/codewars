@@ -17,5 +17,8 @@ public class DirReductionTest {
 
         assertEquals("\"NORTH\", \"WEST\", \"SOUTH\", \"EAST\"",
                new String[]{"NORTH", "WEST", "SOUTH", "EAST"}, DirReduction.dirReduc(new String[]{"NORTH", "WEST", "SOUTH", "EAST"}));
+
+        assertEquals("\"NORTH\", \"WEST\", \"SOUTH\", \"EAST\", \"SOUTH\", \"EAST\"",
+                new String[]{"NORTH", "WEST", "SOUTH", "EAST", "SOUTH", "EAST"}, DirReduction.dirReduc(new String[]{"NORTH", "WEST", "SOUTH", "EAST", "SOUTH", "EAST"}));
     }
 }
