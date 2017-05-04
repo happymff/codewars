@@ -30,40 +30,42 @@ public class DirReduction {
         return s1;
     }
 
-    public static StringBuffer getDir(String[] arr){
+    public static StringBuffer getDir(String[] arr) {
         StringBuffer stringBuffer = new StringBuffer();
-        for(int i =1; i< arr.length; i ++) {
-            if (arr[i - 1].equals("NORTH")) {
-                if (!arr[i].equals("SOUTH")) {
-                    stringBuffer.append(arr[i-1]);
-                    stringBuffer.append(",");
-                }else {
-                    i++;
-                }
-            } else if (arr[i - 1].equals("SOUTH")) {
-                if (!arr[i].equals("NORTH")) {
-                    stringBuffer.append(arr[i-1]);
-                    stringBuffer.append(",");
-                }else {
-                    i++;
-                }
-            } else if (arr[i - 1].equals("WEST")) {
-                if (!arr[i].equals("EAST")) {
-                    stringBuffer.append(arr[i-1]);
-                    stringBuffer.append(",");
-                }else {
-                    i++;
-                }
-            } else if (arr[i - 1].equals("EAST")) {
-                if (!arr[i].equals("WEST")) {
-                    stringBuffer.append(arr[i-1]);
-                    stringBuffer.append(",");
-                }else {
-                    i++;
+
+            for (int i = 1; i < arr.length; i++) {
+                if (arr[i - 1].equals("NORTH")) {
+                    if (!arr[i].equals("SOUTH")) {
+                        stringBuffer.append(arr[i - 1]);
+                        stringBuffer.append(",");
+                    } else {
+                        i++;
+                    }
+                } else if (arr[i - 1].equals("SOUTH")) {
+                    if (!arr[i].equals("NORTH")) {
+                        stringBuffer.append(arr[i - 1]);
+                        stringBuffer.append(",");
+                    } else {
+                        i++;
+                    }
+                } else if (arr[i - 1].equals("WEST")) {
+                    if (!arr[i].equals("EAST")) {
+                        stringBuffer.append(arr[i - 1]);
+                        stringBuffer.append(",");
+                    } else {
+                        i++;
+                    }
+                } else if (arr[i - 1].equals("EAST")) {
+                    if (!arr[i].equals("WEST")) {
+                        stringBuffer.append(arr[i - 1]);
+                        stringBuffer.append(",");
+                    } else {
+                        i++;
+                    }
                 }
             }
+            stringBuffer.append(arr[arr.length - 1]);
+            return stringBuffer;
         }
-        stringBuffer.append(arr[arr.length-1]);
-        return stringBuffer;
-    }
+
 }
