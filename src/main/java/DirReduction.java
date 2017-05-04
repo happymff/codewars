@@ -8,7 +8,7 @@ public class DirReduction {
         StringBuffer stringBuffer;
         stringBuffer = getDir(arr);
         while (true) {
-            //System.out.println(stringBuffer);
+            System.out.println(stringBuffer);
             String s = String.valueOf(stringBuffer);
             if ((s.contains("NORTH") && s.contains("SOUTH")) || (s.contains("WEST") && s.contains("EAST"))) {
                 s1 = s.split(",");
