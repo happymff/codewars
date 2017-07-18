@@ -30,25 +30,42 @@ public class SecretDetective {
         stringBuffer.append(s1,0,3);
         System.out.println(stringBuffer);
         for(int i = -3; i <0; i ++) {
+            System.out.println("第"+(i+3));
             s = stringBuffer.substring(stringBuffer.length()+i);
+            //System.out.println(s);
             System.out.println(s.charAt(0));
-            for(int j =0; j <stringBuffer1.length(); j ++) {
-                count= s1.indexOf(stringBuffer.charAt(j));
+            for(int j =0; j <stringBuffer.length()-2; j ++) {
+                count= s1.indexOf(s.charAt(0));
+                //System.out.println(s1.charAt(count));
                 System.out.println("----count----"+count);
                 while (count != -1) {
+                    if (i!= -3){
+                        j=k+1;
+                    }
                     count = s1.indexOf(stringBuffer.charAt(j), count + 1);//*从这个索引往后开始第一个出现的位置
                     System.out.println("count = " + count);
                     if ((count > 1) && ((stringBuffer1.charAt(count - 1)) != ',')){
                         System.out.println("插入位置："+(stringBuffer.length() + i-k));
-                        stringBuffer.insert(stringBuffer.length() + i -k, s1.charAt(count - 1));
+
+                        if (i==-3){
+                            if (stringBuffer.toString().charAt(0)!=s1.charAt(count-1)) {
+                                stringBuffer.insert(stringBuffer.length() + i - k, s1.charAt(count - 1));
+                            }else {
+                                continue;
+                            }
+                        }else if(i==-2) {
+                            if (stringBuffer.toString().charAt(stringBuffer.length() -3)!=s1.charAt(count-1)) {
+                                stringBuffer.insert(stringBuffer.length() -2, s1.charAt(count - 1));
+                            }else {
+                                continue;
+                            }
+                        }
                         System.out.println("stringBuffer:" + stringBuffer);
                         k++;
                         stringBuffer1.deleteCharAt(count-1);
-                        stringBuffer1.insert(j, s1.charAt(count - 1));
-                        System.out.println("stringBuffer1:" + stringBuffer1);
-                        s1=stringBuffer1.toString();
                     }
                 }
+                System.out.println(k);
                 j= j+k;
             }
         }

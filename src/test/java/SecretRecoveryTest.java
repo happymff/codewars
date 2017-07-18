@@ -9,10 +9,11 @@ import static org.junit.Assert.assertEquals;
 
 public class SecretRecoveryTest {
     private SecretDetective detective;
-
+    private SecretDetective1 detective1;
     @Before
     public void setup() {
         detective = new SecretDetective();
+        detective1 = new SecretDetective1();
     }
 
     @Test
@@ -26,6 +27,7 @@ public class SecretRecoveryTest {
                 {'t', 'i', 's'},
                 {'w', 'h', 's'}
         };
-        assertEquals("whatisup", detective.recoverSecret(triplets));
+        //assertEquals("whatisup", detective.recoverSecret(triplets));
+        assertEquals("whatisup", detective1.recoverSecret(triplets));
     }
 }
