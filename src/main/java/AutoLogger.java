@@ -41,10 +41,10 @@ public class AutoLogger {
     }
     public void warn(String msg){
         logger.warn(msg);
-        Reporter.log("Reporter:"+msg);
+       Reporter.log("Reporter:"+msg);
     }
     public void error(String msg){
         logger.error(msg);
-        Reporter.log("Reporter:"+msg);
+       Reporter.log("Reporter:"+msg);
     }
 }
